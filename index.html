@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>David Peddigrew — Channel Ownership &amp; Revenue Planning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="David Peddigrew — Owning marketing channels from strategic plan to revenue impact.">
+<meta name="theme-color" content="#1C1917">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF8F5;
+  --ink:#1C1917;
+  --mute:#57534E;
+  --card:#FFFFFF;
+  --line:#E7E5E4;
+  --line-dark:#1C1917;
+  --espresso:#1C1917;
+  --brass:#B45309;
+  --brass-soft:#FEF3C7;
+  --sage:#1E3A2F;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:400 16.5px/1.65 "Inter",system-ui,-apple-system,sans-serif;
+}
+::selection{background:var(--brass-soft);color:var(--ink)}
+
+.topbar{
+  position:sticky;top:0;z-index:40;
+  background:rgba(250,248,245,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-in{
+  max-width:1100px;margin:0 auto;padding:15px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.wordmark{
+  color:var(--ink);text-decoration:none;
+  font:700 18px/1 "Inter",sans-serif;letter-spacing:.18em;text-transform:uppercase;
+}
+.wordmark .swap{position:relative;display:inline-block}
+.wordmark .swap::after{content:"O";position:absolute;left:0;right:0;top:0;text-align:center;color:var(--brass);opacity:0}
+.wordmark .swap.on{color:transparent}
+.wordmark .swap.on::after{opacity:1}
+
+.navlinks{display:none;gap:26px;align-items:center}
+@media(min-width:760px){.navlinks{display:flex}}
+.navlinks a{color:var(--mute);text-decoration:none;font-size:14px;font-weight:600;transition:color .15s}
+.navlinks a:hover{color:var(--ink)}
+.nav-cta{
+  background:var(--espresso);color:#FAF8F5 !important;
+  border-radius:8px;padding:10px 18px;font:600 13.5px/1 "Inter",sans-serif;text-decoration:none;
+}
+
+.wrap{max-width:1100px;margin:0 auto;padding:34px 22px 84px}
+
+.hero{
+  background:var(--espresso);color:#FAF8F5;
+  border-radius:24px;padding:clamp(32px,5.5vw,60px);
+  display:grid;gap:32px;
+}
+@media(min-width:860px){.hero{grid-template-columns:1.35fr .85fr;align-items:center}}
+.kicker{
+  display:inline-block;
+  color:#FDE68A;border:1px solid rgba(253,230,138,.35);
+  font:600 11.5px/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  padding:7px 13px;border-radius:6px;margin-bottom:18px;
+}
+.hero h1{
+  font:700 clamp(38px,5.6vw,64px)/1.04 "Fraunces",Georgia,serif;
+  letter-spacing:-.02em;margin:0 0 20px;color:#FFFFFF;
+}
+.hero .sub{color:#D6D3D1;font-size:17.5px;max-width:52ch;margin:0 0 28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-brass{
+  background:#D97706;color:#FFFFFF;text-decoration:none;
+  font:600 15px/1 "Inter",sans-serif;border-radius:10px;padding:15px 24px;
+}
+.btn-stone{
+  background:rgba(255,255,255,.08);color:#FAF8F5;text-decoration:none;
+  font:600 15px/1 "Inter",sans-serif;border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:15px 22px;
+}
+
+.exec-brief{
+  background:#292524;border:1px solid #44403C;border-radius:18px;padding:24px;
+}
+.exec-brief small{
+  display:block;color:#FDE68A;font:600 11px/1 "Inter",sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;
+}
+.brief-row{border-top:1px solid #44403C;padding:12px 0}
+.brief-row:first-of-type{border-top:0;padding-top:0}
+.brief-row:last-of-type{padding-bottom:0}
+.brief-row b{display:block;font:700 20px/1.15 "Fraunces",Georgia,serif;color:#FFFFFF;margin-bottom:2px}
+.brief-row span{font-size:13.5px;color:#A8A29E}
+
+.sec-head{margin:60px 0 24px}
+.eyebrow{
+  display:inline-block;color:var(--brass);
+  font:700 12px/1 "Inter",sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;
+}
+h2{font:700 clamp(30px,4.5vw,44px)/1.08 "Fraunces",Georgia,serif;letter-spacing:-.02em;margin:0}
+.sec-sub{color:var(--mute);max-width:56ch;margin:8px 0 0}
+
+.pillars{display:grid;gap:16px}
+@media(min-width:800px){.pillars{grid-template-columns:repeat(3,1fr)}}
+.pillar{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;
+}
+.pillar-num{font:700 12px/1 "Inter",sans-serif;color:var(--brass);margin-bottom:10px}
+.pillar h3{font:700 21px/1.2 "Fraunces",Georgia,serif;margin:0 0 10px}
+.pillar p{margin:0;color:var(--mute);font-size:15px}
+
+.cases{display:grid;gap:18px}
+@media(min-width:780px){.cases{grid-template-columns:repeat(2,1fr)}}
+.case{
+  background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;
+  display:flex;flex-direction:column;transition:box-shadow .18s,border-color .18s;
+}
+.case:hover{border-color:var(--line-dark);box-shadow:0 12px 30px rgba(28,25,23,.07)}
+.case-top{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  margin-bottom:12px;
+}
+.tag{
+  background:var(--brass-soft);color:var(--brass);
+  font:700 11px/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;
+  padding:6px 10px;border-radius:6px;
+}
+.case h3{font:700 23px/1.2 "Fraunces",Georgia,serif;margin:0 0 10px}
+.case p{margin:0 0 18px;color:var(--mute);font-size:15.5px}
+.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:auto 0 18px}
+.scope{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px}
+.scope b{display:block;font:700 17px/1.15 "Fraunces",Georgia,serif;color:var(--ink)}
+.scope span{font-size:12.5px;color:var(--mute)}
+.open-btn{
+  width:100%;background:var(--espresso);color:#FAF8F5;border:0;
+  border-radius:10px;padding:14px 16px;font:600 14px/1 "Inter",sans-serif;
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+}
+.open-btn:hover{background:var(--sage)}
+
+.leadership-card{
+  background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;
+  display:grid;gap:22px;
+}
+@media(min-width:780px){.leadership-card{grid-template-columns:1.2fr .8fr}}
+.role-block{border-left:2px solid var(--brass);padding-left:18px;margin-bottom:18px}
+.role-block:last-child{margin-bottom:0}
+.role-block small{display:block;font:700 11.5px/1 "Inter",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-bottom:4px}
+.role-block h4{margin:0 0 6px;font-size:18px}
+.role-block p{margin:0;color:var(--mute);font-size:15px}
+
+.cred-box{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px}
+.cred-box h4{margin:0 0 12px;font:700 16px/1.2 "Fraunces",Georgia,serif}
+.cred-box ul{margin:0;padding-left:18px;color:var(--mute);font-size:14.5px}
+.cred-box li{margin-bottom:8px}
+
+.cta{
+  margin-top:60px;background:var(--sage);color:#FAF8F5;
+  border-radius:22px;padding:clamp(30px,5vw,48px);
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;
+}
+.cta h2{color:#FFFFFF;max-width:18ch}
+.cta p{margin:8px 0 0;color:#D1FAE5;max-width:48ch}
+.btn-light{
+  background:#FAF8F5;color:var(--sage);text-decoration:none;
+  font:700 15px/1 "Inter",sans-serif;border-radius:10px;padding:15px 24px;
+}
+
+dialog{
+  width:min(660px,92vw);border:1px solid var(--line-dark);border-radius:20px;
+  background:var(--card);color:var(--ink);padding:0;box-shadow:0 24px 60px rgba(0,0,0,.28);
+}
+dialog::backdrop{background:rgba(28,25,23,.72);backdrop-filter:blur(4px)}
+.m-head{background:var(--espresso);color:#FAF8F5;padding:22px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.m-head h3{font:700 24px/1.15 "Fraunces",Georgia,serif;color:#FFFFFF;margin:6px 0 0}
+.m-close{background:rgba(255,255,255,.15);color:#FFFFFF;border:0;border-radius:8px;width:36px;height:36px;cursor:pointer}
+.m-body{padding:22px 24px;display:grid;gap:12px}
+.step{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.step small{display:block;font:700 11px/1 "Inter",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:5px}
+.step p{margin:0;font-size:14.5px}
+.ph{display:inline-block;background:var(--brass-soft);border:1px dashed var(--brass);color:var(--brass);padding:1px 6px;border-radius:5px;font-weight:600;font-size:13px}
+
+footer{text-align:center;color:var(--mute);font-size:13.5px;margin-top:48px}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="#top" aria-label="David Peddigrew"><span aria-hidden="true">DAVID PEDDIGR<span class="swap">E</span>W</span></a>
+    <nav class="navlinks">
+      <a href="#pillars">Operating Model</a>
+      <a href="#cases">Ownership Cases</a>
+      <a href="#leadership">Track Record</a>
+      <a href="#contact" class="nav-cta">Schedule Discussion</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <section class="hero">
+    <div>
+      <div class="kicker">Lane 03 · Channel Ownership + Revenue Planning</div>
+      <h1>Owning marketing channels from strategic plan to revenue impact.</h1>
+      <p class="sub">Commercial marketing operator who solely led Canadian digital operations for Skechers—partnering with US C-suite and VP leadership, launching international markets, and aligning cross-functional teams.</p>
+      <div class="hero-actions">
+        <a href="#cases" class="btn-brass">Review Leadership Case Studies ↓</a>
+        <a href="#pillars" class="btn-stone">Operating Scope</a>
+      </div>
+    </div>
+
+    <aside class="exec-brief">
+      <small>Executive Summary</small>
+      <div class="brief-row">
+        <b>National Channel Ownership</b>
+        <span>Solely led Skechers digital operations in Canada (2021–Present)</span>
+      </div>
+      <div class="brief-row">
+        <b>US C-Suite &amp; VP Alignment</b>
+        <span>Direct stakeholder reporting, forecasting, and commercial planning</span>
+      </div>
+      <div class="brief-row">
+        <b>Multi-Country Expansion</b>
+        <span>Cross-team leadership supporting international e-commerce launches</span>
+      </div>
+    </aside>
+  </section>
+
+  <section id="pillars">
+    <div class="sec-head">
+      <span class="eyebrow">Leadership Scope</span>
+      <h2>From Campaign Execution to Channel Ownership</h2>
+      <p class="sec-sub">Built for Marketing Manager, Growth Lead, and Channel Director roles requiring commercial accountability rather than isolated channel management.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01 · PLANNING &amp; FORECASTING</div>
+        <h3>Commercial Roadmapping</h3>
+        <p>Translating annual revenue goals into quarterly promotional calendars, budget allocations, and clear KPI forecasts.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02 · EXECUTIVE STAKEHOLDERS</div>
+        <h3>US C-Suite &amp; VP Partnership</h3>
+        <p>Bridging regional market execution with US corporate leadership—delivering concise performance narratives and risk mitigation.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03 · CROSS-TEAM DELIVERY</div>
+        <h3>End-to-End Orchestration</h3>
+        <p>Aligning creative, merchandising, paid media, and technical teams to launch campaigns and new country storefronts on schedule.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases">
+    <div class="sec-head">
+      <span class="eyebrow">Selected Mandates · 6-Step Case Studies</span>
+      <h2>Channel &amp; Revenue Ownership</h2>
+      <p class="sec-sub">Each case outlines scope, stakeholders, execution, and commercial outcomes.</p>
+    </div>
+
+    <div class="cases">
+      <article class="case">
+        <div class="case-top">
+          <span class="tag">National Ownership</span>
+          <span style="font-size:13px;color:var(--mute);font-weight:600">Skechers Canada · 2021–Present</span>
+        </div>
+        <h3>Solely Leading Canadian Digital &amp; E-Commerce Operations</h3>
+        <p>Owned end-to-end digital channel execution for Skechers in Canada—operating at Director-level scope across merchandising, acquisition, and revenue reporting.</p>
+        <div class="scope-grid">
+          <div class="scope"><b>100% Ownership</b><span>Canadian digital channel</span></div>
+          <div class="scope"><b>[ADD REV / SCOPE]</b><span>Annual revenue &amp; growth</span></div>
+        </div>
+        <button class="open-btn" data-case="c1"><span>Read 6-Step Case Study</span><span>→</span></button>
+      </article>
+
+      <article class="case">
+        <div class="case-top">
+          <span class="tag">International Rollout</span>
+          <span style="font-size:13px;color:var(--mute);font-weight:600">Cross-Border Expansion</span>
+        </div>
+        <h3>Launching New International E-Commerce Markets</h3>
+        <p>Led operational readiness and cross-team coordination to launch new country storefronts while maintaining core North American performance.</p>
+        <div class="scope-grid">
+          <div class="scope"><b>[ADD #] Countries</b><span>Markets launched</span></div>
+          <div class="scope"><b>[ADD TIMELINE]</b><span>Planning to go-live</span></div>
+        </div>
+        <button class="open-btn" data-case="c2"><span>Read 6-Step Case Study</span><span>→</span></button>
+      </article>
+
+      <article class="case">
+        <div class="case-top">
+          <span class="tag">Executive Alignment</span>
+          <span style="font-size:13px;color:var(--mute);font-weight:600">US C-Suite &amp; VP Stakeholders</span>
+        </div>
+        <h3>Cross-Border Governance, Forecasting &amp; KPI Reporting</h3>
+        <p>Established structured reporting and commercial planning rhythms with US VP and C-suite stakeholders to align inventory, marketing spend, and seasonal targets.</p>
+        <div class="scope-grid">
+          <div class="scope"><b>C-Suite / VP</b><span>Direct stakeholder cadence</span></div>
+          <div class="scope"><b>[ADD BUDGET]</b><span>Channel budget overseen</span></div>
+        </div>
+        <button class="open-btn" data-case="c3"><span>Read 6-Step Case Study</span><span>→</span></button>
+      </article>
+
+      <article class="case">
+        <div class="case-top">
+          <span class="tag">Team Leadership</span>
+          <span style="font-size:13px;color:var(--mute);font-weight:600">Cross-Functional Delivery</span>
+        </div>
+        <h3>Leading Multi-Disciplinary Teams Across Brand &amp; Agency</h3>
+        <p>Coordinated internal specialists, agency partners, and collegiate coaching staffs to deliver high-stakes campaigns and operational turnarounds.</p>
+        <div class="scope-grid">
+          <div class="scope"><b>[ADD TEAM SIZE]</b><span>Cross-functional contributors</span></div>
+          <div class="scope"><b>On-Time Delivery</b><span>Multi-channel launches</span></div>
+        </div>
+        <button class="open-btn" data-case="c4"><span>Read 6-Step Case Study</span><span>→</span></button>
+      </article>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="sec-head">
+      <span class="eyebrow">Background</span>
+      <h2>Commercial &amp; Leadership Track Record</h2>
+    </div>
+    <div class="leadership-card">
+      <div>
+        <div class="role-block">
+          <small>Feb 2021 — Present</small>
+          <h4>E-Commerce Lead — Skechers Canada</h4>
+          <p>Solely led digital operations for Skechers in Canada; worked directly with US C-suite and VP leadership, supported international country launches, and owned commercial digital performance.</p>
+        </div>
+        <div class="role-block">
+          <small>Agency &amp; Client-Side Foundation</small>
+          <h4>Digital Marketing — Eden Advertising &amp; Interactive, ChizComm &amp; Counter Tax Lawyers</h4>
+          <p>Managed client strategy, paid media budgets, and measurable lead/revenue generation across diverse B2C and B2B organizations.</p>
+        </div>
+        <div class="role-block">
+          <small>Coaching &amp; Operations</small>
+          <h4>Assistant Men’s Basketball Coach &amp; Video Coordinator — Durham College</h4>
+          <p>Led tactical preparation, film analytics, and team coordination in a competitive collegiate program.</p>
+        </div>
+      </div>
+
+      <div class="cred-box">
+        <h4>Education &amp; Certifications</h4>
+        <ul>
+          <li><b>Google Data Analytics Certificate</b> — Oct 2024</li>
+          <li><b>Bachelor of Sports Management</b> — Brock University</li>
+          <li><b>NBA All-Star Weekend 2016</b> — Live Fan Engagement</li>
+          <li><b>Ontario Basketball Organizations</b> — Media &amp; Comms</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div>
+      <h2>Looking for an operator who owns the channel end-to-end?</h2>
+      <p>Available for Marketing Manager, Growth Lead, and Channel Director roles.</p>
+    </div>
+    <a class="btn-light" href="mailto:david@example.com?subject=Leadership%20%26%20Channel%20Ownership%20Role">Connect with David →</a>
+  </section>
+
+  <footer>David Peddigrew · Channel Ownership &amp; Revenue Planning Portfolio</footer>
+</main>
+
+<dialog id="modal">
+  <div class="m-head">
+    <div>
+      <span class="tag" id="m-tag">Case Study</span>
+      <h3 id="m-title">Title</h3>
+    </div>
+    <button class="m-close" id="m-close" aria-label="Close">✕</button>
+  </div>
+  <div class="m-body" id="m-body"></div>
+</dialog>
+
+<script>
+var DATA={
+  c1:{
+    tag:"National Ownership · Skechers Canada",
+    title:"Solely Leading Canadian Digital & E-Commerce Operations",
+    steps:[
+      ["01 · Business Problem","Operate and grow a major footwear brand’s Canadian digital channel with lean local headcount and high commercial expectations."],
+      ["02 · My Role","E-Commerce Lead—owning daily operations, promotional planning, merchandising, and performance reporting."],
+      ["03 · Strategy","Build repeatable operational rhythms connecting Canadian market nuances with US corporate inventory and brand campaigns."],
+      ["04 · Execution","<span class='ph'>[ADD: Specific operational improvements, budget scope, and promotional programs owned]</span>"],
+      ["05 · Result","<span class='ph'>[ADD: Revenue growth %, channel share, or operational efficiency gains]</span>"],
+      ["06 · What I Learned","True channel ownership means sweating both top-line demand generation and day-to-day operational execution."]
+    ]
+  },
+  c2:{
+    tag:"International Rollout · Expansion",
+    title:"Launching New International E-Commerce Markets",
+    steps:[
+      ["01 · Business Problem","Launch new country e-commerce storefronts cleanly across time zones, currencies, and regional teams."],
+      ["02 · My Role","Cross-functional launch lead coordinating timelines, QA, merchandising readiness, and go-live."],
+      ["03 · Strategy","Standardize launch milestones and stakeholder sign-offs to eliminate bottlenecks before go-live."],
+      ["04 · Execution","<span class='ph'>[ADD: Countries launched, stakeholders involved, and timeline]</span>"],
+      ["05 · Result","<span class='ph'>[ADD: Successful launch outcomes and early market traction]</span>"],
+      ["06 // What I Learned","Clear accountability matrices keep multi-country launches moving when priorities compete."]
+    ]
+  },
+  c3:{
+    tag:"Executive Alignment · US C-Suite & VP",
+    title:"Cross-Border Governance, Forecasting & KPI Reporting",
+    steps:[
+      ["01 · Business Problem","Keep US executive stakeholders informed and aligned on Canadian digital forecasts, inventory needs, and performance."],
+      ["02 · My Role","Primary Canadian digital point of contact for US VP and C-suite leadership."],
+      ["03 · Strategy","Translate granular digital metrics into commercial revenue narratives and proactive forecast updates."],
+      ["04 · Execution","<span class='ph'>[ADD: Reporting cadence, forecasting inputs, and key executive initiatives]</span>"],
+      ["05 · Result","<span class='ph'>[ADD: Improved forecast accuracy, faster approvals, or commercial wins]</span>"],
+      ["06 · What I Learned","Executives value candor, early risk flags, and clear links between marketing spend and margin."]
+    ]
+  },
+  c4:{
+    tag:"Team Leadership · Cross-Functional",
+    title:"Leading Multi-Disciplinary Teams Across Brand & Agency",
+    steps:[
+      ["01 · Business Problem","Deliver complex digital campaigns and launches across creative, media, tech, and external partners without dropped handoffs."],
+      ["02 · My Role","Team lead and coordinator setting priorities, briefs, and accountability."],
+      ["03 · Strategy","Establish shared KPIs, concise briefs, and regular check-ins so every contributor sees how their work drives revenue."],
+      ["04 · Execution","<span class='ph'>[ADD: Team size/roles led and specific cross-team project example]</span>"],
+      ["05 · Result","<span class='ph'>[ADD: Project outcome and business impact]</span>"],
+      ["06 · What I Learned","People move faster when they understand the commercial 'why' behind every deadline."]
+    ]
+  }
+};
+var modal=document.getElementById("modal");
+document.querySelectorAll(".open-btn").forEach(function(b){
+  b.addEventListener("click",function(){
+    var d=DATA[b.getAttribute("data-case")];if(!d)return;
+    document.getElementById("m-tag").textContent=d.tag;
+    document.getElementById("m-title").textContent=d.title;
+    document.getElementById("m-body").innerHTML=d.steps.map(function(s){
+      return '<div class="step"><small>'+s[0]+'</small><p>'+s[1]+'</p></div>';
+    }).join("");
+    modal.showModal();
+  });
+});
+document.getElementById("m-close").addEventListener("click",function(){modal.close()});
+modal.addEventListener("click",function(e){if(e.target===modal)modal.close()});
+
+(function(){
+  var swap=document.querySelector(".wordmark .swap");if(!swap)return;
+  setInterval(function(){
+    if(Math.random()<0.08){
+      swap.classList.add("on");
+      setTimeout(function(){swap.classList.remove("on")},200);
+    }
+  },4000);
+})();
+</script>
+</body>
+</html>
